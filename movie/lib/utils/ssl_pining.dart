@@ -31,7 +31,7 @@ class SSLPining {
       }
       log('bytes $bytes');
       context.setTrustedCertificatesBytes(bytes);
-      log('createHttpClient() - cert added!');
+      log('createHttpClient() - certificated added!');
     } on TlsException catch (e) {
       if (e.osError?.message != null &&
           e.osError!.message.contains('CERT_ALREADY_IN_HASH_TABLE')) {
