@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:movie/utils/utils.dart';
 import '../bloc_tv/watchlist_tv_bloc.dart';
 import '../widgets/tv_card_list.dart';
+
 
 
 class WatchlistTvPage extends StatefulWidget {
@@ -13,12 +15,25 @@ class WatchlistTvPage extends StatefulWidget {
   _WatchlistTvPageState createState() => _WatchlistTvPageState();
 }
 
-class _WatchlistTvPageState extends State<WatchlistTvPage> {
+class _WatchlistTvPageState extends State<WatchlistTvPage> with
+    RouteAware{
   @override
   void initState() {
     super.initState();
     Future.microtask(
             () => BlocProvider.of<WatchlistTvBloc>(context).add(FetchWatchlistTv()));
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    routeObserver.subscribe(this, ModalRoute.of(context)!);
+  }
+
+  @override
+  void didPopNext() {
+    super.didPopNext();
+    BlocProvider.of<WatchlistTvBloc>(context).add(FetchWatchlistTv());
   }
 
   @override
@@ -30,7 +45,7 @@ class _WatchlistTvPageState extends State<WatchlistTvPage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: BlocBuilder<WatchlistTvBloc, WatchlistTvState>(
-          builder: (_, state) {
+          builder: (context, state) {
             if (state is WatchlistTvLoading) {
               return const Center(
                 child: CircularProgressIndicator(),

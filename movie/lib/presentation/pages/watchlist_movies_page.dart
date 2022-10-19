@@ -51,7 +51,6 @@ class _WatchlistMoviesPageState extends State<WatchlistMoviesPage>
               );
             } else if (state is WatchlistMoviesHasData) {
               final watchlistMovies = state.result;
-
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final movie = watchlistMovies[index];

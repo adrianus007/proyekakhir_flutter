@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258386620313",
+    "project_id": "ditonton-a19f5",
+    "storage_bucket": "ditonton-a19f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258386620313:android:40883510611297f2136d08",
+        "android_client_info": {
+          "package_name": "com.example.restorant_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258386620313-0gpb4h9n6b54figv5nm4acitei24b8rq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA08Rlz7Ox-l78vnoZcRMYusQMO7yKT85k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258386620313-0gpb4h9n6b54figv5nm4acitei24b8rq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

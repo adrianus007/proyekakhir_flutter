@@ -23,6 +23,9 @@ dependencies:
   path_provider: ^2.0.2
   flutter_bloc: ^8.1.1
   mocktail: ^0.3.0
+  firebase_core: ^2.0.0
+  firebase_crashlytics: ^3.0.1
+
 
 
   tvs:

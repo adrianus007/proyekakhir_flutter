@@ -1,4 +1,5 @@
 import 'package:about/about_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:movie/data/datasources/db/database_helper.dart';
 import 'package:movie/presentation/bloc/movie_recommendations_bloc.dart';
 import 'package:movie/presentation/bloc/watchlist_movie_bloc.dart';
@@ -38,9 +39,14 @@ import 'package:provider/provider.dart';
 import 'package:ditonton/injection.dart' as di;
 import 'package:search/presentation/pages/search_page.dart';
 
+import 'firebase_options.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SSLPining.init();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   di.init();
   runApp(MyApp());
 }
